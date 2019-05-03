@@ -1,4 +1,4 @@
-### Top Gun Lab
+# Top Gun Lab
 
 ## Javascript project
 
