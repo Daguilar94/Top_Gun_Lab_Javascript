@@ -185,6 +185,15 @@ button:hover {
 }
 
 @media (max-width: 700px) {
+    h1 {
+        font-size: 4.8em;
+    }
+    h2 {
+        font-size: 1.3em
+    }
+    p {
+        font-size: 0.8em;
+    }
     .hero {
         height: 100vh;
         grid-template-columns: 1fr;
