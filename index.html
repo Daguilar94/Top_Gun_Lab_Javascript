@@ -22,52 +22,36 @@
         <div class="passengers__header">
             <h2 class="passengers__title">Conoce nuestra próxima tripulación</h2>
             <label hidden for="passengers-search" aria-hidden="true">buscar pasjeros</label>
-            <input placeholder="Buscar pasajeros" class="passengers__search" name="passengers-search" type="text">
+            <input
+                placeholder="Buscar pasajeros"
+                class="passengers__search"
+                name="passengers-search"
+                type="text"
+            >
         </div>
-        <div class="passengers__gallery">
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-            <figure class="passengers__card">
-                <img src="./assets/images/woman_avatar.jpg" alt="avatar" style="width:100%">
-                <figcaption class="passengers__caption">Luna S.</figcaption>
-            </figure>
-        </div>
+        <div class="passengers__gallery"></div>
     </section>
     <section class="inscription">
         <h2 class="inscription__title">¿Quieres hacer parte de esta experiencia?</h2>
-        <form class="inscription__form">
-            <label class="inscription__label" for="passengers-amount">¿Cuántos pasajeros quieres registrar?</label>
-            <div class="inscription__actions">
-                <input type="number" name="passengers-amount" type="text">
-                <button type="submit">Registrar</button>
+        <div class="inscription__content">
+            <div class="inscription__summary">
+                <h3 class="inscription__age">
+                    Edad promedio:
+                    <span class="inscription__info average-age">45 años</span>
+                </h3>
+                <h3 class="inscription__profit">
+                    Ganancia total:
+                    <span class="inscription__info total-profit">$300000000</span>
+                </h3>
             </div>
-        </form>
+            <form class="inscription__form">
+                <label class="inscription__label" for="passengers-amount">¿Cuántos pasajeros quieres registrar?</label>
+                <div class="inscription__actions">
+                    <input type="number" name="passengers-amount" id="passengers-amount" required>
+                    <button type="submit" id="register-button">Registrar</button>
+                </div>
+            </form>
+        </div>
     </section>
     <section class="experiencies">
         <h2 class="experiencies__title">
@@ -78,5 +62,6 @@
 
         </div>
     </section>
+    <script src="./js/index.js"></script>
 </body>
 </html>
