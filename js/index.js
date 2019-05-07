@@ -2,35 +2,49 @@
     "use strict"
     let passengers = [
         { name: 'Luna Sky', age: 4 },
-        { name: 'Luna Sky', age: 24 },
-        { name: 'Luna Sky', age: 13 },
-        { name: 'Luna Sky', age: 44 },
-        { name: 'Luna Sky', age: 14 },
-        { name: 'Luna Sky', age: 34 },
-        { name: 'Luna Sky', age: 37 },
-        { name: 'Luna Sky', age: 74 },
-        { name: 'Luna Sky', age: 12 },
-        { name: 'Luna Sky', age: 11 },
-        { name: 'Luna Sky', age: 34 },
-        { name: 'Luna Sky', age: 30 }
+        { name: 'Sebastian Escobar', age: 24 },
+        { name: 'Mateo Gómez', age: 13 },
+        { name: 'Andrea Hurtado', age: 44 },
+        { name: 'Santiago Arcila', age: 14 },
+        { name: 'Johnatan Ruiz', age: 34 },
+        { name: 'Manuela Restrepo', age: 37 },
+        { name: 'Camilo Alzate', age: 74 },
+        { name: 'Juan Hincapié', age: 12 },
+        { name: 'Sara Castaño', age: 11 },
+        { name: 'William Serna', age: 34 },
+        { name: 'Juana García', age: 30 }
     ];
     let averageAge = 0;
     let totalProfit = 0;
+    let showedPassengers = [...passengers];
     
     const passengerGallery = document.querySelector('.passengers__gallery');
+    const totalProfitElement = document.querySelector('.total-profit');
+    const averageAgeElement = document.querySelector('.average-age');
     const passengersAmount = document.getElementById('passengers-amount');
     const registerButton = document.getElementById('register-button');
-    const averageAgeElement = document.querySelector('.average-age');
-    const totalProfitElement = document.querySelector('.total-profit');
-    
+    const filterPassengersInput = document.getElementById('filter-passengers');
+
     registerButton.addEventListener('click', registerPassengers);
-    
+    filterPassengersInput.addEventListener('input', filterPassengers);
+
     function registerPassengers(e) {
         e.preventDefault();
         const numberOfPassengers = passengersAmount.value;
         const passengersInfo = getPassengersInfo(numberOfPassengers);
         passengers = passengers.concat(passengersInfo);
+        showedPassengers = [...passengers];
+        filterPassengersInput.value = "";
         passengersAmount.value = "";
+        updatePassengers();
+    }
+
+    function filterPassengers(e) {
+        const value = e.target.value.toLowerCase();
+        showedPassengers = passengers.filter((passenger) => {
+            const name = passenger.name.toLowerCase();
+            return name.includes(value);
+        });
         updatePassengers();
     }
     
@@ -53,7 +67,7 @@
     }
 
     const updatePassengers = () => {
-        const passengerNodes = passengers.map(passenger => createPassengerNode(passenger.name));
+        const passengerNodes = showedPassengers.map(passenger => createPassengerNode(passenger.name));
         passengerGallery.innerHTML = "";
         passengerNodes.forEach(node => {
             passengerGallery.appendChild(node);
@@ -85,7 +99,7 @@
 
 
 // -----------------------------
-// Crea una función llamada "getPassengersInfo" que reciba un número entero (x), 
+// 1. Crea una función llamada "getPassengersInfo" que reciba un número entero (x), 
 // debe preguntar al usuario por el nombre y edad de la persona a inscribir (x) veces.
 // se debe construir un arreglo de objetos con la información recogida. Cada objeto corresponde
 // a un tripulante de modo que el objeto retornado debe tener la siguiente estuctura:
@@ -108,7 +122,7 @@ const getPassengersInfo = (passengersAmount) => {
 };
 //------------------------------
 // -----------------------------
-// Crea una función llamada "getAverageAge" que reciba un arreglo de objetos
+// 2.  Crea una función llamada "getAverageAge" que reciba un arreglo de objetos
 // con la siguiente estructura:
 
 var passengers = [
@@ -126,7 +140,7 @@ function getAverageAge(passengers) {
 };
 //------------------------------
 // -----------------------------
-// Crea una función llamada "getTotalProfit" que reciba un arreglo de objetos
+// 3. Crea una función llamada "getTotalProfit" que reciba un arreglo de objetos
 // con la siguiente estructura:
 
 var passengers = [
