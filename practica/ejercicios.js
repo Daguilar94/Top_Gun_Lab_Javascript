@@ -10,16 +10,9 @@
     { name: '...', age: 2 }
 ]
 
-export const getPassengersInfo = (passengersAmount) => {
-    let passengers = [];
-    for(let i = 0; i < passengersAmount; i++) {
-        const name = prompt('Ingresa tu nombre');
-        let age = prompt('Ingresa tu edad');
-        age = parseInt(age, 10);
-        passengers.push({ name, age });
-    }
-    return passengers;
-};
+
+
+
 
 // -----------------------------
 // 2.  Crea y exporta una función llamada "getAverageAge" que reciba un arreglo de objetos
@@ -33,11 +26,11 @@ export const getPassengersInfo = (passengersAmount) => {
 
 // Y que retorne el valor promedio de los valores de la llave age en los objetos.
 
-export function getAverageAge(passengers) {
-    const sum = passengers.reduce((acc, passenger) => acc += passenger.age, 0);
-    const passengersAmount = passengers.length;
-    return sum / passengersAmount;
-};
+
+
+
+
+
 
 // -----------------------------
 // 3. Crea y exporta una función llamada "getTotalProfit" que reciba un arreglo de objetos
@@ -57,22 +50,9 @@ export function getAverageAge(passengers) {
 // Personas mayores de 30 años                          4000 dólares
 
 
-export function getTotalProfit(passengers) {
-    let amounts = passengers.map(passenger => {
-        const age = passenger.age;
-        switch(true) {
-            case (age <= 13):
-                return 3000;
-            case (age > 13 && age <= 30):
-                return 5000
-            case (age > 30):
-                return 4000
-            default:
-                return 0;
-        }
-    });
-    const sum = amounts.reduce((acc, amount) => acc += amount, 0);
-    return sum
-};
+
+
+
+
 
 //------------------------------
