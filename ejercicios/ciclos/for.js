@@ -7,6 +7,8 @@
 
 var natural = [1, 50, 34, 289, 32, 65, 76, 89, 32, 5, 12];
 
+const sum = natural.reduce((accum, val) => accum + val);
+const average = sum / natural.length;
 
 // ***** Para correr este archivo en la consola de node ejecuta el siguiente comando:
 // ***** node ./ejercicios/ciclos/for.js

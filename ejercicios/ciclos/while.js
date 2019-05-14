@@ -6,6 +6,14 @@
 
 var natural = ["Este", "Es", "mi", "primer", "ciclo", "while"];
 
+let finalString = "";
+
+while(natural.length > 0) {
+    const word = natural.shift();
+    finalString += `${word} `;
+}
+
+finalString.trim();
 
 // ***** Para correr este archivo en la consola de node ejecuta el siguiente comando:
 // ***** node ./ejercicios/ciclos/while.js
