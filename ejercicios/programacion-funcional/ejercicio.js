@@ -3,15 +3,14 @@
 // Se sabe que en la tripulación existe una persona de la tercera edad ( mayor a 65 años )
 // pero no se sabe en cual silla está sentada.
 
-// Encuentra el número de la silla de la primera edad.
+// Encuentra el número de la silla de la persona de la tercera edad.
 
 var edadPasajeros = [12, 34, 55, 11, 5, 64, 22, 10, 54, 28, 52, 27, 29, 83, 14, 35, 21, 5, 8, 32, 51];
 
-
+const numSilla = edadPasajeros.findIndex(pasajero => pasajero > 65);
 
 //---------------------------------------------------------------------------------------
-// De estos pasajeros también se tiene la información de su género y nombre
-// en el siguiente arreglo de objetos. 
+// De estos pasajeros también se tiene la información de su género
 
 // Se desean obtener 3 listas a partir de este arreglo:
 
@@ -21,6 +20,9 @@ var edadPasajeros = [12, 34, 55, 11, 5, 64, 22, 10, 54, 28, 52, 27, 29, 83, 14, 
 
 var infoPasajeros = [ "F", "F", "M", "F", "M", "O", "F", "O", "M", "O", "F", "M", "F", "F", "F", "M", "F", "M", "F", "F", "M", "O", "O", "M", "O", "M", "M", "F", "O", "F", "F", "O", "F", "O", "F", "O", "O", "F", "O", "F", "M", "O", "M", "M", "F", "F", "F", "F", "F" ];
 
+const femenino = infoPasajeros.filter(pasajero => pasajero === "F");
+const masculino = infoPasajeros.filter(pasajero => pasajero === "M");
+const otro = infoPasajeros.filter(pasajero => pasajero === "O");
 
 
 //---------------------------------------------------------------------------------------
@@ -30,8 +32,11 @@ var infoPasajeros = [ "F", "F", "M", "F", "M", "O", "F", "O", "M", "O", "F", "M"
 
 var valorTiquetes = [ 61349, 53324, 90174, 77520, 96005, 52580, 91493, 66581, 68996, 93337, 76044, 93736, 85139, 89210, 53343, 68912, 53170, 51065, 66017, 83672, 79044, 78694, 79464, 94234, 84501, 89256, 85583, 59145, 97383, 67540, 67751, 60060, 90530, 79268, 77188, 88743, 82096, 64028, 75455, 58223, 89661, 52199, 90117, 74046, 55924, 95065, 55851, 72848 ];
 
+const arregloDolares = valorTiquetes.map(val => val / 3000);
+
 // Además se desea conocer el valor total adquirido en dólares mediante la suma de estos.
 
+const suma = arregloDolares.reduce((acc, val) => acc + val);
 
 // ***** Para correr este archivo en la consola de node ejecuta el siguiente comando:
 // ***** node ./ejercicios/programacion-funcional/ejercicio.js
