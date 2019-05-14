@@ -4,6 +4,11 @@
 // se debe construir un arreglo de objetos con la información recogida. Cada objeto corresponde
 // a un tripulante de modo que el objeto retornado debe tener la siguiente estuctura:
 
+// PISTA: para exportar una función lo puedes hacer de las siguientes maneras:
+// 1. export function miFuncion() {...}
+// O si usas arrow functions, así:
+// 2. export const miFuncion = () => {...}
+
 [
     { name: '...', age: 5 },
     { name: '...', age: 23 },
