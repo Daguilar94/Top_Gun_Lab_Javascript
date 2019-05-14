@@ -10,3 +10,17 @@
 // 2. Ten en cuenta que el valor ingresado en el prompt se recibe como string. 🤔
 
 // Escribe el código debaje de esta linea y pégalo en la consola del navegador para probarlo.
+
+let age = prompt("ingresa tu edad");
+age = parseInt(age);
+
+switch(age) {
+    case 0:
+        console.log("Acaba de nacer");
+        break;
+    case 18:
+        console.log("Acaba de cumplir la mayoría de edad");
+        break;
+    default:
+        console.log("Edad intermedia");
+}
