@@ -1,4 +1,5 @@
 import {
+    filterPassengersByName,
     getPassengersInfo,
     getAverageAge,
     getTotalProfit
@@ -47,10 +48,7 @@ import {
 
     function filterPassengers(e) {
         const value = e.target.value.toLowerCase();
-        showedPassengers = passengers.filter((passenger) => {
-            const name = passenger.name.toLowerCase();
-            return name.includes(value);
-        });
+        showedPassengers = filterPassengersByName(passengers, value);
         updatePassengers();
     }
     
