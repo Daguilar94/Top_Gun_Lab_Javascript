@@ -88,3 +88,24 @@ export function getTotalProfit(passengers) {
 };
 
 //------------------------------
+// 4. Crea y exporta una función llamada "filterPassengersByName" que reciba como argumentos 2 parametros:
+
+// El primer parámetro es un arreglo con los pasajeros con la siguiente estrucrura:
+[
+    { name: '...', age: 5 },
+    { name: '...', age: 23 },
+    { name: '...', age: 2 }
+]
+
+// El segundo parámetro es un string que corresponde a lo que el usuario está digitando en el campo
+// donde se buscan los pasajeros.
+
+// La función debe devolver un arreglo de objetos similar al del argumento pero
+// únicamente con los objetos en los cuales en el valor de la llave "name" se incluye
+// el valor del string que es pasado como parámetro.
+// Sin tener en cuenta Mayúsculas y minúsculas.
+
+export const filterPassengersByName = (passengers, string) => passengers.filter((passenger) => {
+    const name = passenger.name.toLowerCase();
+    return name.includes(string);
+});

@@ -1,4 +1,5 @@
 import {
+    filterPassengersByName,
     getPassengersInfo,
     getAverageAge,
     getTotalProfit
@@ -47,10 +48,7 @@ import {
 
     function filterPassengers(e) {
         const value = e.target.value.toLowerCase();
-        showedPassengers = passengers.filter((passenger) => {
-            const name = passenger.name.toLowerCase();
-            return name.includes(value);
-        });
+        showedPassengers = filterPassengersByName(passengers, value);
         updatePassengers();
     }
     
@@ -90,9 +88,7 @@ import {
 
     const updateTotalProfit = () => {
         totalProfit = getTotalProfit(passengers);
-        let totalProfitValue = totalProfit
-            ? totalProfit
-            : 0;
+        let totalProfitValue = totalProfit || 0;
         totalProfitValue = totalProfitValue
             .toLocaleString('en-US', { style: "currency", currency: 'USD' })
         totalProfitElement.textContent = totalProfitValue;
