@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <title>Browser API</title>
+    <style>
+        body {
+            background-attachment: fixed;
+            background-image: linear-gradient(to bottom right, #0100EC, #FB36F4);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+            width: 100%;
+            font-family: 'Baloo Bhai', cursive;
+            font-size: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 200px);
+            grid-template-rows: repeat(auto-fit, 200px);
+            flex-grow: 1;
+            width: 100%;
+            grid-gap: 10px;
+        }
+
+        .box {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #b3e5ffAA;
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .red {
+            background-color: #F04579AA;
+        }
+
+        .invisible {
+            background: none !important;
+            border: 2px dotted #FFE031AA;
+        }
+
+        .buttons-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            border: 1px solid white;
+            width: 200px;
+            border-radius: 10px;
+            background: none;
+            height: 50px;
+            font-family: 'Baloo Bhai', cursive;
+            font-size: 20px;
+            color: white;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .button--add {
+            width: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box-container">
+        <div class="box" id="first-box"></div>
+    </div>
+    <div class="buttons-container">
+        <button class="button--add" id="add-button">+</button>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
