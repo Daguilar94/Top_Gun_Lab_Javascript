@@ -5,25 +5,40 @@ import {
     getTotalProfit
 } from "../practica/ejercicios.js";
 
+// import { getPassengers } from "../practica/api.js";
+
 (function() {
     "use strict"
-    let passengers = [
-        { name: 'Luna Sky', age: 4 },
-        { name: 'Sebastian Escobar', age: 24 },
-        { name: 'Mateo Gómez', age: 13 },
-        { name: 'Andrea Hurtado', age: 44 },
-        { name: 'Santiago Arcila', age: 14 },
-        { name: 'Johnatan Ruiz', age: 34 },
-        { name: 'Manuela Restrepo', age: 37 },
-        { name: 'Camilo Alzate', age: 74 },
-        { name: 'Juan Hincapié', age: 12 },
-        { name: 'Sara Castaño', age: 11 },
-        { name: 'William Serna', age: 34 },
-        { name: 'Juana García', age: 30 }
-    ];
+
+    let passengers = [];
     let averageAge = 0;
     let totalProfit = 0;
     let showedPassengers = [...passengers];
+
+    fetch("https://rickandmortyapi.com/api/character/")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(response) {
+            const characters = response.results;
+            // console.log(characters);
+            const characterArray = characters.map(character => {
+                return ({
+                    name: character.name,
+                    src: character.image,
+                    age: Math.floor(Math.random() * 100)
+                })
+            })
+
+            passengers = characterArray;
+            showedPassengers = [...passengers];
+            updatePassengers();
+            updateAverageAge();
+            updateTotalProfit();
+        })
+        .catch(function(error) {
+            console.log("Error: " + error);
+        })
     
     const passengerGallery = document.querySelector('.passengers__gallery');
     const totalProfitElement = document.querySelector('.total-profit');
@@ -52,7 +67,7 @@ import {
         updatePassengers();
     }
     
-    const createPassengerNode = (name) => {
+    const createPassengerNode = (name, src) => {
         const figure = document.createElement('FIGURE');
         const img = document.createElement('IMG');
         const caption = document.createElement('FIGCAPTION');
@@ -61,7 +76,7 @@ import {
         caption.classList.add('passengers__caption');
         img.classList.add('passengers__img');
     
-        img.setAttribute('src', "./assets/images/woman_avatar.jpg");
+        img.setAttribute("src", src);
         img.setAttribute("alt", "avatar");
     
         caption.textContent = name;
@@ -71,7 +86,7 @@ import {
     }
 
     const updatePassengers = () => {
-        const passengerNodes = showedPassengers.map(passenger => createPassengerNode(passenger.name));
+        const passengerNodes = showedPassengers.map(({name, src}) => createPassengerNode(name, src));
         passengerGallery.innerHTML = "";
         passengerNodes.forEach(node => {
             passengerGallery.appendChild(node);
@@ -93,7 +108,7 @@ import {
             .toLocaleString('en-US', { style: "currency", currency: 'USD' })
         totalProfitElement.textContent = totalProfitValue;
     }
-    
+
     updatePassengers();
     updateAverageAge();
     updateTotalProfit();
