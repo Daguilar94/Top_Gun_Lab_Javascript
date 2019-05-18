@@ -15,30 +15,22 @@ import {
     let totalProfit = 0;
     let showedPassengers = [...passengers];
 
-    fetch("https://rickandmortyapi.com/api/character/")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(response) {
-            const characters = response.results;
-            // console.log(characters);
-            const characterArray = characters.map(character => {
-                return ({
-                    name: character.name,
-                    src: character.image,
-                    age: Math.floor(Math.random() * 100)
-                })
-            })
+    // Crea la petición fetch aquí y cuando obtengas la respuesta utiliza los métodos existentes
+    // dentro del "then" para que los personajes se carguen correctamente.
 
-            passengers = characterArray;
-            showedPassengers = [...passengers];
-            updatePassengers();
-            updateAverageAge();
-            updateTotalProfit();
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-        })
+
+
+
+
+
+    
+
+
+
+
+
+
+    //--------------------------------------------------------------------------------------------
     
     const passengerGallery = document.querySelector('.passengers__gallery');
     const totalProfitElement = document.querySelector('.total-profit');
