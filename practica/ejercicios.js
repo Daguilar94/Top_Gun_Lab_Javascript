@@ -27,8 +27,9 @@ export const getPassengersInfo = (passengersAmount) => {
     for(let i = 0; i < passengersAmount; i++) {
         const name = prompt('Ingresa tu nombre');
         let age = prompt('Ingresa tu edad');
+        let src = "../assets/images/woman_avatar.jpg"
         age = parseInt(age, 10);
-        passengers.push({ name, age });
+        passengers.push({ name, age, src });
     }
     return passengers;
 };
