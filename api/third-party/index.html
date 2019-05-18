@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <title>I don't know Rick</title>
+
+    <style>
+        body {
+            background-attachment: fixed;
+            background-color: #222;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px;
+            width: 100%;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            align-self: center;
+            text-align: center;
+        }
+
+        #character-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 200px);
+            grid-template-rows: repeat(auto-fit, 200px);
+            flex-grow: 1;
+            grid-gap: 10px;
+            justify-content: center;
+        }
+
+        .avatar-image {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rick And Morty Characters</h2>
+    <div id="character-container">
+
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
